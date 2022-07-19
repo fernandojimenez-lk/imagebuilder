@@ -1,6 +1,7 @@
 FROM amazon/aws-cli AS downloader
 
 #RUN aws s3 sync s3://keysmaker/gh /src
+RUN printenv
 RUN find /var/run
 
 FROM alpine:3.16.0
