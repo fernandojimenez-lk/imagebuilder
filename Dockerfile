@@ -1,8 +1,7 @@
 FROM amazon/aws-cli AS downloader
 
 #RUN aws s3 sync s3://keysmaker/gh /src
-ARG AWS_TOKEN
-RUN echo $AWS_TOKEN
+RUN ls -l /var/run
 
 FROM alpine:3.16.0
 
