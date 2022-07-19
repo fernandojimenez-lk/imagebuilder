@@ -1,8 +1,8 @@
 FROM amazon/aws-cli AS downloader
 
-RUN git version
-RUN aws s3 sync s3://keysmaker/gh /src
-
+#RUN aws s3 sync s3://keysmaker/gh /src
+ARG AWS_TOKEN
+RUN echo $AWS_TOKEN
 
 FROM alpine:3.16.0
 
