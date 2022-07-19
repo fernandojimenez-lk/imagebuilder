@@ -1,5 +1,6 @@
 FROM amazon/aws-cli AS downloader
 
+RUN git version
 RUN aws s3 sync s3://keysmaker/gh /src
 
 
