@@ -1,11 +1,11 @@
 FROM amazon/aws-cli AS downloader
 
-#RUN aws s3 sync s3://keysmaker/gh /src
 
 ARG AWS_ROLE_ARN="arn:aws:iam::128765541338:role/mgmt-keysmaker-gh"
 ARG AWS_WEB_IDENTITY_TOKEN_FILE="/var/run/secrets/eks.amazonaws.com/serviceaccount/token"
-RUN printenv
-RUN find /var/run
+
+RUN aws s3 sync s3://keysmaker/gh /src \
+    && ls -l /src
 
 FROM alpine:3.16.0
 
