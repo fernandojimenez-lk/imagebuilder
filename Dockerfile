@@ -1,7 +1,7 @@
 FROM amazon/aws-cli AS downloader
 
 
-ARG AWS_ROLE_ARN="arn:aws:iam::128765541338:role/mgmt-keysmaker-gh"
+#ARG AWS_ROLE_ARN="arn:aws:iam::128765541338:role/mgmt-keysmaker-gh"
 ARG AWS_WEB_IDENTITY_TOKEN_FILE="/var/run/secrets/eks.amazonaws.com/serviceaccount/token"
 
 RUN aws sts get-caller-identity 
